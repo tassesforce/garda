@@ -1,0 +1,133 @@
+09:53:48:+02:00 [Information] [] : Getting the motors running... { ThreadId: 1, Application: "CustomTemplate" } 
+09:53:50:+02:00 [Fatal] [] : Unable to start Kestrel. { SourceContext: "Microsoft.AspNetCore.Server.Kestrel", ThreadId: 1, Application: "CustomTemplate" } 
+System.IO.IOException: Failed to bind to address https://127.0.0.1:5001: address already in use. ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use ---> System.Net.Sockets.SocketException: Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass21_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.WebHostExtensions.RunAsync(IWebHost host, CancellationToken token, String shutdownMessage)
+   at Microsoft.AspNetCore.Hosting.WebHostExtensions.RunAsync(IWebHost host, CancellationToken token)
+   at Microsoft.AspNetCore.Hosting.WebHostExtensions.Run(IWebHost host)
+   at Program.Main(String[] args) in /mnt/partage/Commun/Workspaces/Garda/Program.cs:line 30
+09:53:50:+02:00 [Fatal] [] : Host terminated unexpectedly { ThreadId: 1, Application: "CustomTemplate" } 
+System.IO.IOException: Failed to bind to address https://127.0.0.1:5001: address already in use. ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use ---> System.Net.Sockets.SocketException: Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass21_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.WebHostExtensions.RunAsync(IWebHost host, CancellationToken token, String shutdownMessage)
+   at Microsoft.AspNetCore.Hosting.WebHostExtensions.RunAsync(IWebHost host, CancellationToken token)
+   at Microsoft.AspNetCore.Hosting.WebHostExtensions.Run(IWebHost host)
+   at Program.Main(String[] args) in /mnt/partage/Commun/Workspaces/Garda/Program.cs:line 30
+09:54:13:+02:00 [Information] [] : Getting the motors running... { ThreadId: 1, Application: "CustomTemplate" } 
+09:54:16:+02:00 [Information] [] : https GET localhost:5001/  { SourceContext: "lug.Middleware.Request.RequestResponseLoggingMiddleware", RequestId: "0HLMD845JIQIG:00000001", RequestPath: "/", CorrelationId: null, ConnectionId: "0HLMD845JIQIG", ThreadId: 13, Application: "CustomTemplate" } 
+09:54:16:+02:00 [Information] [] : Response:  { SourceContext: "lug.Middleware.Request.RequestResponseLoggingMiddleware", RequestId: "0HLMD845JIQIG:00000001", RequestPath: "/", CorrelationId: null, ConnectionId: "0HLMD845JIQIG", ThreadId: 13, Application: "CustomTemplate" } 
+09:54:16:+02:00 [Information] [] : HTTP "GET" "/" responded 404 in 70.7319 ms { SourceContext: "lug.Middleware.Log.SerilogMiddleware", RequestId: "0HLMD845JIQIG:00000001", CorrelationId: null, ConnectionId: "0HLMD845JIQIG", ThreadId: 13, Application: "CustomTemplate" } 
+10:05:52:+02:00 [Information] [] : https POST localhost:5001/auth/fcollonge , Body : {
+	password:"testpd",
+	client_id:"56784348-45b4-48f1-a245-12f5d4a04a05",
+	client_secret:"73c18669-0282-45d8-82c5-d7a29ede9400",
+	grant_type:"grant_type"
+}
+ { SourceContext: "lug.Middleware.Request.RequestResponseLoggingMiddleware", RequestId: "0HLMD845JIQIH:00000001", RequestPath: "/auth/fcollonge", CorrelationId: null, ConnectionId: "0HLMD845JIQIH", ThreadId: 26, Application: "CustomTemplate" } 
+10:05:54:+02:00 [Information] [] : Récupération de l'application cliente "56784348-45b4-48f1-a245-12f5d4a04a05"} "completed" in 1490.0 ms { OperationId: 347778bc-4a83-42b6-9730-7dabb84c8e2d, CorrelationId: "156498489", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQIH:00000001", RequestPath: "/auth/fcollonge", ConnectionId: "0HLMD845JIQIH", ThreadId: 26, Application: "CustomTemplate" } 
+10:05:54:+02:00 [Information] [] : Récupération de l'application consommatrice "56784348-45b4-48f1-a245-12f5d4a04a05" "completed" in 1508.1 ms { OperationId: eddfbebb-8225-487c-bab2-c6ce9f3baadb, CorrelationId: "156498489", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQIH:00000001", RequestPath: "/auth/fcollonge", ConnectionId: "0HLMD845JIQIH", ThreadId: 26, Application: "CustomTemplate" } 
+10:05:54:+02:00 [Information] [] : Récupération de l'utilisateur "fcollonge" "completed" in 86.1 ms { OperationId: d538fe4a-316f-4b1d-a7b3-d4bc7ddb6fc2, CorrelationId: "156498489", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQIH:00000001", RequestPath: "/auth/fcollonge", ConnectionId: "0HLMD845JIQIH", ThreadId: 26, Application: "CustomTemplate" } 
+10:05:54:+02:00 [Information] [] : Demande d'authentification "completed" in 2131.2 ms { OperationId: 29ab4f99-27e3-494e-b9bf-61299a37c50e, CorrelationId: "156498489", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQIH:00000001", RequestPath: "/auth/fcollonge", ConnectionId: "0HLMD845JIQIH", ThreadId: 26, Application: "CustomTemplate" } 
+10:05:54:+02:00 [Information] [] : Erreur lors de l'éxécution : NotFound L'utilisateur fcollonge n'a pas été trouvé dans notre référentiel    at garda.Controllers.User.UserAuthController.AuthenticateUser(UserAuthRequest userRequest, String login) in /mnt/partage/Commun/Workspaces/Garda/Controllers/com/virtual/learn/controller/userauth/UserAuthController.cs:line 63
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync() { SourceContext: "garda.Exception.Filter.CustomExceptionFilter", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQIH:00000001", RequestPath: "/auth/fcollonge", CorrelationId: null, ConnectionId: "0HLMD845JIQIH", ThreadId: 26, Application: "CustomTemplate" } 
+10:05:54:+02:00 [Information] [] : Response: L'utilisateur fcollonge n'a pas été trouvé dans notre référentiel    at garda.Controllers.User.UserAuthController.AuthenticateUser(UserAuthRequest userRequest, String login) in /mnt/partage/Commun/Workspaces/Garda/Controllers/com/virtual/learn/controller/userauth/UserAuthController.cs:line 63
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync() { SourceContext: "lug.Middleware.Request.RequestResponseLoggingMiddleware", RequestId: "0HLMD845JIQIH:00000001", RequestPath: "/auth/fcollonge", CorrelationId: null, ConnectionId: "0HLMD845JIQIH", ThreadId: 26, Application: "CustomTemplate" } 
+10:05:54:+02:00 [Information] [] : HTTP "POST" "/auth/fcollonge" responded 404 in 2716.1913 ms { SourceContext: "lug.Middleware.Log.SerilogMiddleware", RequestId: "0HLMD845JIQIH:00000001", CorrelationId: null, ConnectionId: "0HLMD845JIQIH", ThreadId: 26, Application: "CustomTemplate" } 
+10:07:46:+02:00 [Information] [] : https POST localhost:5001/auth/fcollonge , Body : {
+	password:"testpd",
+	client_id:"56784348-45b4-48f1-a245-12f5d4a04a05",
+	client_secret:"73c18669-0282-45d8-82c5-d7a29ede9400",
+	grant_type:"grant_type"
+}
+ { SourceContext: "lug.Middleware.Request.RequestResponseLoggingMiddleware", RequestId: "0HLMD845JIQII:00000001", RequestPath: "/auth/fcollonge", CorrelationId: null, ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:07:46:+02:00 [Information] [] : Récupération de l'application cliente "56784348-45b4-48f1-a245-12f5d4a04a05"} "completed" in 4.4 ms { OperationId: b345124e-eacc-4b61-b42e-462380f73f91, CorrelationId: "156498489", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQII:00000001", RequestPath: "/auth/fcollonge", ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:07:46:+02:00 [Information] [] : Récupération de l'application consommatrice "56784348-45b4-48f1-a245-12f5d4a04a05" "completed" in 5.3 ms { OperationId: 569650c1-813b-4493-9b53-5eb5fc268466, CorrelationId: "156498489", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQII:00000001", RequestPath: "/auth/fcollonge", ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:07:46:+02:00 [Information] [] : Récupération de l'utilisateur "fcollonge" "completed" in 0.5 ms { OperationId: 9affe98d-f42b-4cf4-8d9b-292603c5ca12, CorrelationId: "156498489", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQII:00000001", RequestPath: "/auth/fcollonge", ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:07:46:+02:00 [Information] [] : Demande d'authentification "completed" in 513.3 ms { OperationId: 6ece3f1b-d7d3-41a4-97a9-e0f56e081f7c, CorrelationId: "156498489", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQII:00000001", RequestPath: "/auth/fcollonge", ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:07:46:+02:00 [Information] [] : Erreur lors de l'éxécution : Unauthorized L'utilisateur fcollonge n'est pas autorisé    at garda.Controllers.User.UserAuthController.CheckUserAccount(UserAuth userAuth, String password) in /mnt/partage/Commun/Workspaces/Garda/Controllers/com/virtual/learn/controller/userauth/UserAuthController.cs:line 150
+   at garda.Controllers.User.UserAuthController.AuthenticateUser(UserAuthRequest userRequest, String login) in /mnt/partage/Commun/Workspaces/Garda/Controllers/com/virtual/learn/controller/userauth/UserAuthController.cs:line 63
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync() { SourceContext: "garda.Exception.Filter.CustomExceptionFilter", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQII:00000001", RequestPath: "/auth/fcollonge", CorrelationId: null, ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:07:46:+02:00 [Information] [] : Response: L'utilisateur fcollonge n'est pas autorisé    at garda.Controllers.User.UserAuthController.CheckUserAccount(UserAuth userAuth, String password) in /mnt/partage/Commun/Workspaces/Garda/Controllers/com/virtual/learn/controller/userauth/UserAuthController.cs:line 150
+   at garda.Controllers.User.UserAuthController.AuthenticateUser(UserAuthRequest userRequest, String login) in /mnt/partage/Commun/Workspaces/Garda/Controllers/com/virtual/learn/controller/userauth/UserAuthController.cs:line 63
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync() { SourceContext: "lug.Middleware.Request.RequestResponseLoggingMiddleware", RequestId: "0HLMD845JIQII:00000001", RequestPath: "/auth/fcollonge", CorrelationId: null, ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:07:46:+02:00 [Information] [] : HTTP "POST" "/auth/fcollonge" responded 401 in 565.0078 ms { SourceContext: "lug.Middleware.Log.SerilogMiddleware", RequestId: "0HLMD845JIQII:00000001", CorrelationId: null, ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:08:04:+02:00 [Information] [] : https POST localhost:5001/auth/fcollonge , Body : {
+	password:"testpwd",
+	client_id:"56784348-45b4-48f1-a245-12f5d4a04a05",
+	client_secret:"73c18669-0282-45d8-82c5-d7a29ede9400",
+	grant_type:"grant_type"
+}
+ { SourceContext: "lug.Middleware.Request.RequestResponseLoggingMiddleware", RequestId: "0HLMD845JIQII:00000002", RequestPath: "/auth/fcollonge", CorrelationId: null, ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:08:04:+02:00 [Information] [] : Récupération de l'application cliente "56784348-45b4-48f1-a245-12f5d4a04a05"} "completed" in 2.3 ms { OperationId: 4995b361-8ee0-4611-a6c7-d64fd7d929e4, CorrelationId: "156498489", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQII:00000002", RequestPath: "/auth/fcollonge", ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:08:04:+02:00 [Information] [] : Récupération de l'application consommatrice "56784348-45b4-48f1-a245-12f5d4a04a05" "completed" in 3.4 ms { OperationId: f9db630e-8aef-45b2-98f6-a0cd4e0affc2, CorrelationId: "156498489", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQII:00000002", RequestPath: "/auth/fcollonge", ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:08:04:+02:00 [Information] [] : Récupération de l'utilisateur "fcollonge" "completed" in 0.4 ms { OperationId: b029fd9c-ce39-4d26-9070-459c35fd9d99, CorrelationId: "156498489", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQII:00000002", RequestPath: "/auth/fcollonge", ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:08:04:+02:00 [Information] [] : Récupération des rôles de l'utilisateur "beba5f20-1d9c-40c8-9af1-24b2eef68ad9" "completed" in 36.5 ms { OperationId: d9c8e948-743c-4ea2-9d6b-e3dda06b5b01, CorrelationId: "156498489", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQII:00000002", RequestPath: "/auth/fcollonge", ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:08:04:+02:00 [Information] [] : Génération des tokens "completed" in 133.2 ms { OperationId: 373aedd8-dbfa-4ed7-9c87-e02822ec53c7, CorrelationId: "156498489", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQII:00000002", RequestPath: "/auth/fcollonge", ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:08:04:+02:00 [Information] [] : Demande d'authentification "completed" in 407.0 ms { OperationId: 4524d67b-7f34-41e4-a5c6-a140e5f43e85, CorrelationId: "156498489", ActionId: "bf4af1fc-65dd-4f40-8c2c-ba696737d4b6", ActionName: "garda.Controllers.User.UserAuthController.AuthenticateUser (garda)", RequestId: "0HLMD845JIQII:00000002", RequestPath: "/auth/fcollonge", ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:08:04:+02:00 [Information] [] : Response: {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImZjb2xsb25nZSIsIm5hbWVpZCI6ImJlYmE1ZjIwLTFkOWMtNDBjOC05YWYxLTI0YjJlZWY2OGFkOSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3NwbiI6ImFnZW5jeSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3NpZCI6IjU2Nzg0MzQ4LTQ1YjQtNDhmMS1hMjQ1LTEyZjVkNGEwNGEwNSIsInJvbGUiOlsiZGVsZXRlQWdlbmN5QWNjb3VudCIsImRlbGV0ZUNhbmRpZGF0ZUFjY291bnQiLCJkZWxldGVDb21wYW55QWNjb3VudCIsImdldEFnZW5jeUFjY291bnQiLCJnZXRDYW5kaWRhdGVBY2NvdW50IiwiZ2V0Q29tcGFueUFjY291bnQiLCJsaXN0QWNjb3VudHMiLCJwb3N0QWdlbmN5QWNjb3VudCIsInBvc3RDYW5kaWRhdGVBY2NvdW50IiwicG9zdENvbXBhbnlBY2NvdW50IiwicHV0QWdlbmN5QWNjb3VudCIsInB1dENhbmRpZGF0ZUFjY291bnQiLCJwdXRDb21wYW55QWNjb3VudCJdLCJuYmYiOjE1NTY2MTE2ODQsImV4cCI6MTU1NjYxMTgwNCwiaWF0IjoxNTU2NjExNjg0LCJpc3MiOiJodHRwOi8vZGV2LmxlYXJuLXZpcnR1YWwuY29tIiwiYXVkIjoiR2FyZGEifQ.FpzVo4EJODYBwQDf6IzPDxG6cgRCebArYd6_FQvefwA","token_type":"Bearer","refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImZjb2xsb25nZSIsIm5hbWVpZCI6ImJlYmE1ZjIwLTFkOWMtNDBjOC05YWYxLTI0YjJlZWY2OGFkOSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3NwbiI6ImFnZW5jeSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3NpZCI6IjU2Nzg0MzQ4LTQ1YjQtNDhmMS1hMjQ1LTEyZjVkNGEwNGEwNSIsInJvbGUiOlsiZGVsZXRlQWdlbmN5QWNjb3VudCIsImRlbGV0ZUNhbmRpZGF0ZUFjY291bnQiLCJkZWxldGVDb21wYW55QWNjb3VudCIsImdldEFnZW5jeUFjY291bnQiLCJnZXRDYW5kaWRhdGVBY2NvdW50IiwiZ2V0Q29tcGFueUFjY291bnQiLCJsaXN0QWNjb3VudHMiLCJwb3N0QWdlbmN5QWNjb3VudCIsInBvc3RDYW5kaWRhdGVBY2NvdW50IiwicG9zdENvbXBhbnlBY2NvdW50IiwicHV0QWdlbmN5QWNjb3VudCIsInB1dENhbmRpZGF0ZUFjY291bnQiLCJwdXRDb21wYW55QWNjb3VudCJdLCJuYmYiOjE1NTY2MTE2ODQsImV4cCI6MTU1NjY0MDQ4NCwiaWF0IjoxNTU2NjExNjg0LCJpc3MiOiJodHRwOi8vZGV2LmxlYXJuLXZpcnR1YWwuY29tIiwiYXVkIjoiR2FyZGEifQ.tFCtYoSmxYZsrJVSqgPamSyfMxTzDOtZt-KG8Dlfwvk"} { SourceContext: "lug.Middleware.Request.RequestResponseLoggingMiddleware", RequestId: "0HLMD845JIQII:00000002", RequestPath: "/auth/fcollonge", CorrelationId: null, ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:08:04:+02:00 [Information] [] : HTTP "POST" "/auth/fcollonge" responded 200 in 458.1142 ms { SourceContext: "lug.Middleware.Log.SerilogMiddleware", RequestId: "0HLMD845JIQII:00000002", CorrelationId: null, ConnectionId: "0HLMD845JIQII", ThreadId: 35, Application: "CustomTemplate" } 
+10:09:46:+02:00 [Information] [] : https GET localhost:5001/v1/account/agency  { SourceContext: "lug.Middleware.Request.RequestResponseLoggingMiddleware", RequestId: "0HLMD845JIQIJ:00000001", RequestPath: "/v1/account/agency", CorrelationId: null, ConnectionId: "0HLMD845JIQIJ", ThreadId: 38, Application: "CustomTemplate" } 
+10:09:46:+02:00 [Information] [] : Response:  { SourceContext: "lug.Middleware.Request.RequestResponseLoggingMiddleware", RequestId: "0HLMD845JIQIJ:00000001", RequestPath: "/v1/account/agency", CorrelationId: null, ConnectionId: "0HLMD845JIQIJ", ThreadId: 38, Application: "CustomTemplate" } 
+10:09:46:+02:00 [Information] [] : HTTP "GET" "/v1/account/agency" responded 404 in 26.0502 ms { SourceContext: "lug.Middleware.Log.SerilogMiddleware", RequestId: "0HLMD845JIQIJ:00000001", CorrelationId: null, ConnectionId: "0HLMD845JIQIJ", ThreadId: 38, Application: "CustomTemplate" } 

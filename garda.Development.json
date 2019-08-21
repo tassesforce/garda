@@ -1,0 +1,40 @@
+{
+  "Serilog": {
+    "Using": [
+      "Serilog.Sinks.RollingFile",
+      "Serilog.Sinks.Async",
+      "Serilog.Sinks.ApplicationInsights",
+      "Serilog.Sinks.Console"
+    ],
+    "MinimumLevel": {
+      "Default": "Debug",
+      "Override": {
+        "Microsoft": "Warning"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "Async",
+        "Args": {
+          "configure": [
+            {
+              "Name": "RollingFile",
+              "Args": { "pathFormat": "log/garda-{Date}.log",
+              "outputTemplate": "{Timestamp:HH:mm:ss:zzz} [{Level}] [{Address}] {Site}: {Message} {Properties} {NewLine}{Exception}"}
+           }
+          ]
+        }
+      }
+    ],
+    "Enrich": ["FromLogContext", "WithMachineName", "WithThreadId", "WithCorrelationId"],
+    "Properties": {
+      "Application": "CustomTemplate" 
+    }
+  },
+  "AllowedHosts": "*",
+
+  "ConnectionStrings": {
+    "DefaultConnection":
+    "Host=127.0.0.1;Port=5432;Username=garda;Password=garda;Database=garda;"
+  }
+}

@@ -1,0 +1,9 @@
+     Copyright 2019 Florian Collonge
+
+    Ce fichier fait partie de la solution Cairn.
+
+    Cairn est un logiciel libre: vous pouvez le redistribuer et / ou le modifier selon les termes de la Licence Publique Générale GNU publiée par la Free Software Foundation, soit la version 3 de la Licence, soit (selon votre choix) toute version ultérieure.
+
+    Cairn est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE; sans même la garantie implicite de QUALITÉ MARCHANDE ou d'ADÉQUATION À UN USAGE PARTICULIER. Voir la Licence publique générale GNU pour plus de détails.
+
+    Vous devriez avoir reçu une copie de la Licence Publique Générale GNU avec Cairn. Sinon, voir http://www.gnu.org/licenses/ . 

@@ -1,0 +1,60 @@
+{
+  "Serilog": {
+    "Using": [
+      "Serilog.Sinks.RollingFile",
+      "Serilog.Sinks.Async",
+      "Serilog.Sinks.ApplicationInsights",
+      "Serilog.Sinks.Console"
+    ],
+    "MinimumLevel": {
+      "Default": "Debug",
+      "Override": {
+        "Microsoft": "Warning"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "Async",
+        "Args": {
+          "configure": [
+            {
+              "Name": "RollingFile",
+              "Args": { "pathFormat": "log/garda-{Date}.log",
+              "outputTemplate": "{Timestamp:HH:mm:ss:zzz} [{Level}] [{Address}] {Site}: {Message} {Properties} {NewLine}{Exception}"}
+           }
+          ]
+        }
+      }
+    ],
+    "Enrich": ["FromLogContext", "WithMachineName", "WithThreadId", "WithCorrelationId"],
+    "Properties": {
+      "Application": "CustomTemplate" 
+    }
+  },
+  "AllowedHosts": "*",
+
+  "ConnectionStrings": {
+    "DefaultConnection":
+      "Host=127.0.0.1;Port=5432;Username=garda;Password=garda;Database=garda;"
+  },
+  "JWT": {
+    "Audience" : "Garda",
+    "Issuer" : "http://dev.learn-virtual.com",
+    "Key" : "b9gdb2FZtRjNdWj5vXM30S32m9UjetJe8sn8LuERVw2uwymxiy664fCVe071mBHLbskqkInwVLbaCwva0MQJqulyWgRNJcyLiyILwADZbHBjVPvml8x31PqP9znMRw17NYwzJGjYFd4QYtdMSzAX7xBVDO027cpQUmlmvyUueCSvudU5rRNPvfoeLFxwDWeBNqypXowfV2WUpxUMzmNzaiDTA0fGNVy2WtHEKDu0Y5gYv361frIJwgUGqODrixoTcBzOvtYm3UrXgCGreFN2EAEQotJ3K9pRVN4s4OeiljQZ",
+    "Durability": 2,
+    "RefreshDurability": 480,
+    "TokenType": "Bearer"
+  },
+  "Encrypt": {
+    "KeySize": 128,
+    "DerivationIterations": 1000,
+    "PassPhrase": "AwQFBgcCSQoLDA0ODw=="
+  },
+  "API": {
+    "Urls": {
+      "Garda": {
+        "Auth": "auth/"
+      }
+    }
+  }
+}

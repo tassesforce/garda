@@ -1,0 +1,7 @@
+kubectl delete namespace garda-deployment
+kubectl delete pv garda-vol
+kubectl delete pvc garda-claim -n garda-deployment
+kubectl delete resourceQuota mem-cpu-quota -n garda-deployment
+kubectl delete deployment garda-deployment -n garda-deployment
+kubectl delete service garda-service -n garda-deployment
+kubectl delete ingress garda-ingress -n garda-deployment
