@@ -23,11 +23,6 @@ RUN apt-get update && apt-get install -y python3-software-properties software-pr
 # Note: The official Debian and Ubuntu images automatically ``apt-get clean``
 # after each ``apt-get``
 
-COPY CREATE_TABLES.sql /usr/local/bin/
-COPY initdb.sh /usr/local/bin/
-
-RUN chmod +x /usr/local/bin/initdb.sh
-
 # Run the rest of the commands as the ``postgres`` user created by the ``postgres-9.3`` package when it was ``apt-get installed``
 USER postgres
 
@@ -37,8 +32,7 @@ USER postgres
 #       allows the RUN command to span multiple lines.
 RUN    /etc/init.d/postgresql start &&\
     psql --command "CREATE USER garda WITH SUPERUSER PASSWORD 'garda';" &&\
-    createdb -O garda garda &&\
-    /usr/local/bin/initdb.sh
+    createdb -O garda garda
 
 # Adjust PostgreSQL configuration so that remote connections to the
 # database are possible.
