@@ -36,7 +36,7 @@ spec:
         - key: kubernetes.io/hostname
           operator: In
           values:
-          - learn-virtual-dev
+          - ns378902
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -80,12 +80,12 @@ spec:
           persistentVolumeClaim:
             claimName: garda-claim
       containers:
-        - image: "registry.learn-virtual.com:5000/garda"
+        - image: "registry.tassesforce.com:5000/garda"
           imagePullPolicy: Always
           name: garda
           ports:
             - containerPort: 80
-        - image: "registry.learn-virtual.com:5000/pg-garda"
+        - image: "registry.tassesforce.com:5000/pg-garda"
           imagePullPolicy: Always
           name: pg-garda
           ports:
