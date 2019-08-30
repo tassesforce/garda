@@ -34,7 +34,5 @@
   "AllowedHosts": "*",
 
   "ConnectionStrings": {
-    "DefaultConnection":
-    "Host=127.0.0.1;Port=5432;Username=garda;Password=garda;Database=garda;"
   }
 }
