@@ -17,6 +17,7 @@ using Microsoft.IdentityModel.Protocols;
 using Serilog;
 using lug.Middleware.Correlation;
 using garda.Exception.Filter;
+using garda.Services.Historisation;
 
 namespace garda
 {
@@ -41,6 +42,8 @@ namespace garda
             services.AddDbContext<RevokedTokenDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
                 
+            services.AddScoped<IHistoService, HistoService>();
+
             services.AddLogging(loggingBuilder =>
             loggingBuilder.AddSerilog(dispose: true));
             services.AddMvc(
