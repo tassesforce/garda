@@ -1,22 +1,17 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
-using System.Text;
 using garda.Exceptions;
 using garda.Models.Context.ClientContext;
 using garda.Models.Context.RoleContext;
 using garda.Models.Context.UserAuthContext;
-using garda.Models.data.ClientAppData;
-using garda.Models.Data.RoleData;
 using garda.Models.Data.UserAuthData;
 using garda.Query;
+using garda.Services.Historisation;
 using lug.Handler.Token;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Tokens;
 using SerilogTimings;
 
 namespace garda.Controllers.User
@@ -32,7 +27,7 @@ namespace garda.Controllers.User
         private readonly UserAuthDbContext userAuthContext;
 
         public UserAuthController(IConfiguration configuration, UserAuthDbContext userAuthContext, ClientAppDbContext clientAppContext, 
-                    RoleDbContext roleContext, ILogger<UserAuthController> logger) : base(clientAppContext, roleContext)
+                    RoleDbContext roleContext, ILogger<UserAuthController> logger, HistoService histoService) : base(clientAppContext, roleContext, histoService)
         {
             this.configuration = configuration;
             this.userAuthContext = userAuthContext;
@@ -52,12 +47,19 @@ namespace garda.Controllers.User
         {
             using (Operation.Time("Demande d'authentification")) 
             {
+                HistoUserAuth histoUserAuth = new HistoUserAuth();
+                histoUserAuth.ConnectingIp = this.HttpContext.Connection.RemoteIpAddress.ToString();
+                histoUserAuth.ActionDone = GardaActionEnum.LOGIN;
+                histoUserAuth.DateAction = new DateTime();
+                histoUserAuth.Login = login;
                 GardaQueryHandler handler = new GardaQueryHandler(logger, configuration);
                 // Verification des appli conso
                 CheckClientApp(clientAppContext, userRequest.ClientId, userRequest.ClientSecret);
                 
                 UserAuth userAuth = handler.GetUserAuth(userAuthContext, login);
                 if (userAuth == null) {
+                    histoUserAuth.StatusAction = "404";
+                    histoService.Historize(histoUserAuth);
                     throw new UnknownUserException("L'utilisateur " + login + " n'a pas été trouvé dans notre référentiel");
                 }
                 CheckUserAccount(userAuth, userRequest.Password);
@@ -69,6 +71,8 @@ namespace garda.Controllers.User
                 {
                     UserAuthResponse response = GenerateToken(userAuth, userRequest.ClientId, roles);
                     
+                    histoUserAuth.StatusAction = "200";
+                    histoService.Historize(histoUserAuth);
                     return Ok(response);
                 }
             }

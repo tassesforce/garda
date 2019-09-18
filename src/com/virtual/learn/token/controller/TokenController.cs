@@ -24,7 +24,7 @@ namespace garda.Controllers.Token
         private readonly RevokedTokenDbContext revokedTokenContext;
 
         public TokenController(IConfiguration configuration, RevokedTokenDbContext revokedTokenContext, ClientAppDbContext clientAppContext, 
-                    RoleDbContext roleContext, ILogger<TokenController> logger) : base(clientAppContext, roleContext)
+                    RoleDbContext roleContext, ILogger<TokenController> logger) : base(clientAppContext, roleContext, null)
         {
             this.configuration = configuration;
             this.revokedTokenContext = revokedTokenContext;

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using SerilogTimings;
+using garda.Services.Historisation;
 
 namespace garda.Controllers
 {
@@ -22,10 +23,14 @@ namespace garda.Controllers
         /// <summary>Context des roles</summary>
         protected readonly RoleDbContext roleContext;
 
-        protected GardaController (ClientAppDbContext clientAppContext, RoleDbContext roleContext)
+        /// <summary>Service d'historisation des informations</summary>
+        protected IHistoService histoService;
+
+        protected GardaController (ClientAppDbContext clientAppContext, RoleDbContext roleContext, IHistoService histoService)
         {
             this.clientAppContext = clientAppContext;
             this.roleContext = roleContext;
+            this.histoService = histoService;
         }
 
         /*

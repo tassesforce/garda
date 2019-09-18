@@ -22,6 +22,7 @@ namespace garda.Services.Historisation
         {
             this.Logger = logger;
             this.configuration = configuration;
+            this.histoUserAuthContext = histoUserAuthContext;
         }
 
         /// <summary>Action to historize the traffic</summary>
@@ -30,8 +31,8 @@ namespace garda.Services.Historisation
         {
             try
             {
-                histoUserAuthContext.HistoUserAuths.Add(histoUserAuth);
-                histoUserAuthContext.SaveChanges();
+                this.histoUserAuthContext.HistoUserAuths.Add(histoUserAuth);
+                this.histoUserAuthContext.SaveChanges();
             } catch (System.Exception e)
             {
                 Logger.LogError("An error occured during historization : {error}", e.Message);
