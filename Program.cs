@@ -41,11 +41,12 @@ public class Program
 
     public static IWebHost BuildWebHost(string[] args) =>
         WebHost.CreateDefaultBuilder(args)
-               .UseKestrel(k => k.AddServerHeader = false)
-               .UseStartup<garda.Startup>()
-               .UseConfiguration(Configuration)
-               .UseSerilog()
-               .Build();
+            .UseUrls($"http://localhost:{Configuration.GetValue<int>("ConnectionStrings:Kestrel")}")
+            .UseKestrel(k => k.AddServerHeader = false)
+            .UseStartup<garda.Startup>()
+            .UseConfiguration(Configuration)
+            .UseSerilog()
+            .Build();
 }
 
 
