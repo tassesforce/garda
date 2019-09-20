@@ -23,14 +23,10 @@ namespace garda.Controllers
         /// <summary>Context des roles</summary>
         protected readonly RoleDbContext roleContext;
 
-        /// <summary>Service d'historisation des informations</summary>
-        protected IHistoService histoService;
-
-        protected GardaController (ClientAppDbContext clientAppContext, RoleDbContext roleContext, IHistoService histoService)
+        protected GardaController (ClientAppDbContext clientAppContext, RoleDbContext roleContext)
         {
             this.clientAppContext = clientAppContext;
             this.roleContext = roleContext;
-            this.histoService = histoService;
         }
 
         /*

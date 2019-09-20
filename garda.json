@@ -32,7 +32,7 @@
     "AllowedHosts": "*",
 
     "ConnectionStrings": {
-        "DefaultConnection": "Host=10.111.150.101;Port=5432;Username=garda;Password=garda;Database=garda;",
+        "DefaultConnection": "Host=localhost;Port=5432;Username=garda;Password=garda;Database=garda;",
         "Kestrel": 5100
     },
     "JWT": {

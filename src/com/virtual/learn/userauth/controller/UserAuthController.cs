@@ -26,12 +26,15 @@ namespace garda.Controllers.User
     {
         private readonly UserAuthDbContext userAuthContext;
 
+        private IHistoService histoService;
+
         public UserAuthController(IConfiguration configuration, UserAuthDbContext userAuthContext, ClientAppDbContext clientAppContext, 
-                    RoleDbContext roleContext, ILogger<UserAuthController> logger, HistoService histoService) : base(clientAppContext, roleContext, histoService)
+                    RoleDbContext roleContext, ILogger<UserAuthController> logger, HistoUserAuthDbContext histoUserAuthContext) : base(clientAppContext, roleContext)
         {
             this.configuration = configuration;
             this.userAuthContext = userAuthContext;
             this.logger = logger;
+            this.histoService = new HistoService(logger, configuration, histoUserAuthContext);
         }
 
         /*

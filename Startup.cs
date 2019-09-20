@@ -42,8 +42,6 @@ namespace garda
             services.AddDbContext<RevokedTokenDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
                 
-            services.AddScoped<IHistoService, HistoService>();
-
             services.AddLogging(loggingBuilder =>
             loggingBuilder.AddSerilog(dispose: true));
             services.AddMvc(
