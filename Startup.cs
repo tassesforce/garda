@@ -35,6 +35,8 @@ namespace garda
         {
             services.AddDbContext<UserAuthDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<HistoUserAuthDbContext>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<ClientAppDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<RoleDbContext>(options =>
